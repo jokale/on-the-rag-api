@@ -12,6 +12,8 @@ class NotesController < ApplicationController
   
     def create
       @note = Note.new(note_params)
+      @note.date = DateTime.now
+
       if @note.save
         render json: @note
       else
