@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users
   resources :notes
-
+  post 'user_token' => 'user_token#create'
+  post 'find_user' => 'users#find'
   resources :users do
     resources :notes
   end
